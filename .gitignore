@@ -13,5 +13,4 @@
 *.p12
 
 # Large/raw data artifacts
-data/papers_pdf/
 data/temp_playwright_check/

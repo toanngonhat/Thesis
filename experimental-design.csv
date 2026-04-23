@@ -1,0 +1,73 @@
+category,id,name,description,source_papers,notes
+baseline,B1,Re-verification,"Run verifier on the evolved snapshot as-is; keep passing proofs, leave failing ones broken",,"'Lower bound. Status-quo behavior of current verification workflows."""
+baseline,B2,Syntactic proof transplant,"Apply old proof scripts and annotations to new version with rename-only, diff- aware textual patching",002;077;078,Measures how much can be recovered by surface-level alignment alone.
+baseline,B3,Neural proof synthesis from scratch,TacTok/Passport-style tactic-level prediction trained on proof states; ignore old proof,008;010,Tests the central hypothesis that repair beats synthesis when a prior proof exists.
+baseline,B4,LLM-only proof repair,"Prompt an LLM (CodeBERT/GraphCodeBERT/InCoder/GPT-4) with (proof_old, diff, verifier_error to produce proof_new; verifier-only acceptance",090;091;092;093;094;095,"Pure LLM-APR analog. No symbolic alignment, no repair calculus."
+baseline,B5,APR-style generate-and-validate,Patch-template enumeration with search; replace test oracle by proof- checker oracle,004;080;095,APR methodology adapted to proof artifacts. No cross-version alignment.
+baseline,B6,Symbolic-only ablation (ours minus LLM),Full alignment + repair-calculus pipeline with LLM candidate generator disabled,,Ablation: measures LLM contribution; required to defend against Risk 3 (LLM adds little).
+baseline,B7,Equality-saturation rewrite repair (optional),"egg-based algebraic rewriting of goals/assertions, no learning",065,Optional non-ML symbolic baseline; useful if scope allows.
+metric,M1,Automatic repair rate,"Percent of broken proofs accepted by the verifier after a fully automatic patch, zero human edits",004;095,Primary quality metric. Applies to all baselines and all datasets.
+metric,M2,Interactive repair rate @ k,"Percent of cases where the user accepts a suggestion after at most k token edits (k in {1,5,20})",,Workflow-realistic. Used in human study for $13.3.
+metric,M3,Patch minimality,Tree-edit-distance on AST / proof-script between the tool's repair and the nearest accepted version,004;048,Operationalizes the 'repair minimality preference' property in $9.2.
+metric,M4,Alignment precision and recall,TP/FP/FN on old-new entity mappings against manual ground truth,,"Directly tests RQ2. Applicable only to baselines that produce alignments (B5, B6, Ours)."
+metric,M5,Candidate budget,Median and p95 number of candidates tried before a proof-checked acceptance,048;065,Measures search efficiency. Symbolic priors expected to dominate LLM-only on this metric.
+metric,M6,Wall-clock time to restored proof,End-to-end time including alignment + search + verifier runs,004;095,Practical maintenance savings metric.
+metric,M7,Brittleness vs drift classification F1,"Correctness of the repair-vs-escalate decision, against human labels on mixed real-history cases",015,Directly tests RQ4. Prevents 'repairing around' genuine regressions.
+metric,M8,Backend robustness rescuing rate (optional),Percent of solver-version-induced failures successfully repaired across Z3/CVC5 versions,085;086,Isolates toolchain-side brittleness. Critical for D4 analysis.
+dataset,D1,Formalization developments corpus,"Version pairs from formalization developments in Mathlib, Dafny stdlib, Verus, F* stdlib, SteelCore, MoSeL examples, and Equations examples. Each pair labeled with failing-to-fixed verification state.",033;034;036;050;055;071;076;079;081;082;089,"Target size ~2,000-5,000 pairs. Hardest to build but highest empirical weight."
+dataset,D2,Rust verification evolution corpus,"Version pairs from Prusti, RustHorn, Aeneas, Flux, and lightweight- formalism examples where Rust compiler / lifetime elaboration changes caused proof churn"",006;031;032;043;046,""Target ~500-1",000,pairs. Tests evolution coupled with fast-moving source toolchain.
+dataset,D3,Controlled refactoring benchmark,"Synthetic semantics-preserving refactorings applied to verified programs: extract-method, inline, rename, reorder, loop-reshape, contract-factor, ghost-state-restructure, helper-lemma introduction*, 002;077;078, Target ~1",500,pairs. Oracle is known by construction: all should be repairable. Gold standard for RQ1 and RQ3.
+dataset,D4,Backend-variation benchmark,"Same source and proof artifacts evaluated across different backends: Z3 4.8/4.11/4.12, CVC5, alternative SMT-LIB flags, Boogie encoding variants"", 085;086;087,""Target ~ 300-",800,triples. Isolates backend-only brittleness. Primary source for M8.
+related_work,RW008,Passport,Improving automated formal verification using identifiers,008,§3.1 Proof engineering and proof repair
+related_work,RW010,TacTok,Semantics-aware proof synthesis for Coa,010,§3.1 Proof engineering and proof repair
+related_work,RW029 Generating Good Generators,Generator synthesis for inductive relations in Coa,,029,$3.1 Proof engineering and proof repair
+related_work,RW034,Equations Reloaded,Dependently-typed functional programming and proving in Coq,034,$3.1 Proof engineering and proof repair
+related_work,RW037,Metaprogramming Framework,Metaprogramming framework for formal verification,037,§3.1 Proof engineering and proof repair
+related_work,RW049,Coverage-Guided PBT,Coverage-guided property-based testing,049,$3.1 Proof engineering and proof repair
+related_work,RW084,Calculus of Computation,Decision procedures with applications to verification,084,§3.2 SMT- based verification infrastructure
+related_work,RW085,SMT-LIB,The Satisfiability Modulo Theories Library,085,§3.2 SMT-based verification infrastructure
+related_work,RW086,"Z3""""Efficient SMT solver",,086,§3.2 SMT-based verification infrastructure
+related_work,RW087,Boogie,Modular reusable verifier for object-oriented programs,087,"§3.2 SMT-based verification infrastructure""intrastructure"
+related_work,RW088,VCC,Practical system for verifying concurrent C,088,$3.2 SMT-based verification infrastructure
+related_work,RW089,F*,Dependently typed language for program verification,089,§3.2 SMT-based verification infrastructure
+related_work,RW033,CompCertM,CompCert with C-assembly linking and lightweight modular verification,033,$3.3 Interactive theorem proving
+related_work,RW036,MoSeL,General extensible modal framework for interactive proofs in separation logic,036,§3.3 Interactive theorem proving
+related_work,RW040,OutsidelnX,Modular type inference with local assumptions,040,§3.3 Interactive theorem proving
+related_work,RW051,View from the Left,Pattern matching in dependently typed programming,051,§3.3 Interactive theorem proving
+related_work,RW052,Dep Type Theory for Info Flow,Dependent type theory for information flow and access control,052,$3.3 Interactive theorem proving
+related_work,RW055,SSA CompCert,Formal verification of an SSA-based middle-end for Compert,055,§3.3 Interactive theorem proving
+related_work,RW056,Well-founded Recursion,Well-founded recursion with copatterns and sized types,056,§3.3 Interactive theorem proving
+related_work,RW071,SteelCore,Extensible concurrent separation logic for effectful dependently typed programs,071,§3.3 Interactive theorem proving
+related_work,RW082,Iris,Modular foundation for higher-order concurrent separation logic,082,§3.3 Interactive theorem proving
+related_work,RW083,Separation Logic,A logic for shared mutable data structures,083,§3.3 Interactive theorem proving
+related_work,RW006,Rust Prusti-style,Leveraging Rust types for modular specification and verification,006,§3.4 Rust / systems verification
+related_work,RW031,Aeneas,Rust verification by functional translation,031,§3.4 Rust / systems verification
+related_work,RW032,Flux,Liquid types for Rust,032,§3.4 Rust / systems verification
+related_work,RW043,RustHorn,CHC-based verification for Rust programs,043,$3.4 Rust / systems verification
+related_work,RW046,Lightweight Rust Lifetimes,Lightweight formalism for reference lifetimes and borrowing in Rust,046,§3.4 Rust / systems verification
+related_work,RW001,Refactoring Class Diagrams,On proving the correctness of refactoring class diagrams of MDE metamodels,001,83.5 Refactoring and semantics-preserving transformations
+related_work,RW002,Survey of Software Refactoring,Mens and Tourwe survey of software refactoring,002,$3.5 Refactoring and semantics-preserving transformations
+related_work,RW003,Prioritize Code Smells,Approach to prioritize code smells for refactoring,003,$3.5 Refactoring and semantics-preserving transformations
+related_work,RW077,Refactoring in the Wild,Study of refactoring decisions in open source projects,077,§3.5 Refactoring and semantics-preserving transformations
+related_work,RW078,Large-Scale Refactoring,Large-scale study on the usage of refactoring operations,078,$3.5 Refactoring and semantics-preserving transformations
+related_work,RW004,APR Survey,Automatic software repair: a survey (Monperrus),004,§ 3.6 Automated program repair
+related_work,RW080,Test-Suite Augmentation,Test-suite augmentation for improved fault localization,080,53.6 Automated program repair
+related_work,RW095,APR with Pretrained LMs,Automated program repair with pretrained language models,095,§3.6 Automated program repair
+related_work,RW015,LLM Safety Verification Survey,Survey of safety and trustworthiness of LLMs through verification and validation,015,§3.7 LLM-assisted code and proof generation
+related_work,RW090,CodeBERT,Pre-trained model for programming and natural languages,090,$3.7 LLM-assisted code and proof generation
+related_work,RW091,GraphCodeBERT,Pre-training code representations with data flow,091,83.7 LLM-assisted code and proof generation
+related_work,RW092,InCoder,Generative model for code infilling and synthesis,092,§3.7 LLM-assisted code and proof generation
+related_work,RW093,AlphaCode,Using Al to write competitive programming solutions,093,§3.7 LLM-assisted code and proof generation
+related_work,RW094,Program Synthesis with LLMs,Program synthesis with large language models,094,$3.7 LLM- assisted code and proof generation
+related_work,RW009,Interaction Trees,Representing recursive and impure programs in Coq,009,"$3.8 Program synthesis, equivalence, and alignment"
+related_work,RW048,Heap-Manipulating Synthesis,Structuring the synthesis of heap-manipulating programs,048,"$3.8 Program synthesis, equivalence, and alignment"
+related_work,RW065,egg Equality Saturation,Fast and extensible equality saturation,065,"83.8 Program synthesis, equivalence, and alignment"
+related_work,RW038,Refinement Types Secure,Refinement types for secure implementations,038,"$3.9 Software evolution, empirical methodology"
+related_work,RW039,Ott,Effective tool support for the working semanticist,039,"§3.9 Software evolution, empirical methodology"
+related_work,RW041,Case Study Guidelines,Guidelines for conducting and reporting case study research in SE,041,"83.9 Software evolution, empirical methodology"
+related_work,RW050,Co-evolution of Code and Tests,", Studying co-evolution of production and test code via repository mining",050,"83.9 Software evolution, empirical methodology"
+related_work,RW057,Dynamic Software Updating,Foundations for dynamic software updating,057,"§3.9 Software evolution, empirical methodology"
+related_work,RW072,Liquid Haskell Typeclass Refinements,Verifying replicated data types with typeclass refinements in Liquid Haskell,072,"$3.9 Software evolution, empirical methodology"
+related_work,RW076,Technical Debt,Empirical study of technical debt in open source projects,076,"$3.9 Software evolution, empirical methodology"
+related_work,RW079,Software Analytics,Software analytics in practice: a case study,079,"$3.9 Software evolution, empirical methodology™"
+related_work,RW081,Mining Software Repos,Mining software repositories to support software maintenance,081,"$3.9 Software evolution, empirical methodology"

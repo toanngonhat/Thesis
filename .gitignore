@@ -1,0 +1,17 @@
+.DS_Store
+
+# Python virtual environments and caches
+.venv/
+**/__pycache__/
+*.py[cod]
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+
+# Large/raw data artifacts
+data/papers_pdf/
+data/temp_playwright_check/

@@ -1,0 +1,4 @@
+seed_id,seed_file,seed_source,seed_stratum,proof_profile,license,source_repo,source_path
+summax,summax_seed.dfy,dafny-lang/dafny official example,benchmark_example_suite,loop_invariant_and_postcondition,MIT,https://github.com/dafny-lang/dafny,Source/IntegrationTests/TestFiles/LitTests/LitTest/VSComp2010/Problem1-SumMax.dfy
+invert,invert_seed.dfy,dafny-lang/dafny official example,benchmark_example_suite,assertion_heavy_quantifier_reasoning,MIT,https://github.com/dafny-lang/dafny,Source/IntegrationTests/TestFiles/LitTests/LitTest/VSComp2010/Problem2-Invert.dfy
+findzero,findzero_seed.dfy,dafny-lang/dafny official example,benchmark_example_suite,ghost_state_and_object_invariant_reasoning,MIT,https://github.com/dafny-lang/dafny,Source/IntegrationTests/TestFiles/LitTests/LitTest/VSComp2010/Problem3-FindZero.dfy

@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Planned breakage and recovery summary. The table is intended to show which refactoring classes are most brittle and how much of that breakage is removed by B1, B2, and B3 before the residual repair gap is measured.}
+\label{tab:breakage-recovery}
+\begin{tabular}{lcccccc}
+\toprule
+Class & Att. & Brk. & $BR(class_i)$ & $RR(B1)$ & $RR(B2)$ & $RR(B3)$ \\
+\midrule
+Rename & \tbdcell{$N^{\mathrm{rename}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{rename}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{rename})$} & \tbdcell{$RR^{\mathrm{rename}}(B1)$} & \tbdcell{$RR^{\mathrm{rename}}(B2)$} & \tbdcell{$RR^{\mathrm{rename}}(B3)$} \\
+Helper extraction & \tbdcell{$N^{\mathrm{extract}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{extract}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{extract})$} & \tbdcell{$RR^{\mathrm{extract}}(B1)$} & \tbdcell{$RR^{\mathrm{extract}}(B2)$} & \tbdcell{$RR^{\mathrm{extract}}(B3)$} \\
+Inlining & \tbdcell{$N^{\mathrm{inline}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{inline}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{inline})$} & \tbdcell{$RR^{\mathrm{inline}}(B1)$} & \tbdcell{$RR^{\mathrm{inline}}(B2)$} & \tbdcell{$RR^{\mathrm{inline}}(B3)$} \\
+Statement reordering & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{reorder})$} & \tbdcell{$RR^{\mathrm{reorder}}(B1)$} & \tbdcell{$RR^{\mathrm{reorder}}(B2)$} & \tbdcell{$RR^{\mathrm{reorder}}(B3)$} \\
+Loop reshaping & \tbdcell{$N^{\mathrm{loop}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{loop}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{loop})$} & \tbdcell{$RR^{\mathrm{loop}}(B1)$} & \tbdcell{$RR^{\mathrm{loop}}(B2)$} & \tbdcell{$RR^{\mathrm{loop}}(B3)$} \\
+Contract factoring & \tbdcell{$N^{\mathrm{contract}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{contract}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{contract})$} & \tbdcell{$RR^{\mathrm{contract}}(B1)$} & \tbdcell{$RR^{\mathrm{contract}}(B2)$} & \tbdcell{$RR^{\mathrm{contract}}(B3)$} \\
+Ghost-code movement & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{ghost})$} & \tbdcell{$RR^{\mathrm{ghost}}(B1)$} & \tbdcell{$RR^{\mathrm{ghost}}(B2)$} & \tbdcell{$RR^{\mathrm{ghost}}(B3)$} \\
+\midrule
+Residual gap & \tbdcell{$N_{\mathit{broken}}$} & \tbdcell{$N_{\mathit{unrecovered}}$} & \tbdcell{$-$} & \multicolumn{3}{c}{\tbdcell{$Gap_{\mathit{residual}}$}} \\
+\bottomrule
+\end{tabular}
+\end{table}

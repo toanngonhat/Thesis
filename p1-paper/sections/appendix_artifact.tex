@@ -1,0 +1,20 @@
+\section{Artifact and Reproducibility Details}
+\label{app:artifact}
+
+\paragraph{Artifact contents.}
+The artifact package includes the benchmark generator \missing{generator package}, replay harness \missing{replay entrypoint}, baseline implementations \missing{baseline packages}, raw logs \missing{log bundle}, and analysis scripts \missing{analysis entrypoint}. The release package URL is \missing{Artifact URL}.
+
+\paragraph{Environment.}
+The pinned Dafny version is \missing{Dafny version}, the solver version is \missing{Solver version}, the operating system or container base image is \missing{Base image}, and the hardware assumptions are \missing{Hardware assumptions}. The Docker image tag used for replay is \missing{Docker tag}.
+
+\paragraph{Replay workflow.}
+The artifact replay workflow is organized around the following commands:
+\begin{enumerate}
+  \item build Dataset~A with \texttt{\missing{build command}},
+  \item run B1, B2, and B3 with \texttt{\missing{replay command}},
+  \item regenerate tables and figures with \texttt{\missing{analysis command}},
+  \item package the final results with \texttt{\missing{package command}}.
+\end{enumerate}
+
+\paragraph{Anonymization and release.}
+For double-blind submission, the following elements must be removed or anonymized: \missing{repo identifiers}, \missing{organization names}, and \missing{hosting metadata}. The public artifact released after acceptance will additionally contain \missing{public release contents}.

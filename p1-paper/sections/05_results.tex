@@ -1,0 +1,33 @@
+\section{Results}
+
+\subsection{Benchmark Composition}
+
+We begin by summarizing the composition of Dataset~A as an empirical artifact rather than only as input to the baseline comparison. Let $N_{\mathit{seed}}$ denote the number of verified seed programs, $N_{\mathit{items}}$ the number of transformed nearby-version instances retained after the generation pipeline, and $N_{\mathit{eval}}$ the number of items that survive to baseline evaluation. The first summary table should report these quantities by seed-program stratum and by refactoring class, together with the ratio $N_{\mathit{eval}} / N_{\mathit{items}}$. This view establishes whether the benchmark has reasonable coverage across both source regimes and transformation types, and it makes clear that Dataset~A is reusable as a maintenance-centred benchmark even before any one baseline is considered in isolation.
+
+\input{tables/table_benchmark_composition}
+
+\subsection{Breakage Rate by Refactoring Class}
+
+The core descriptive result is how often verification breaks after semantics-preserving refactoring. For each refactoring class $class_i$, we report the number of attempted transformations, the number of broken cases $N_{\mathit{broken}}(class_i)$, and the corresponding breakage rate $BR(class_i)$. If confidence intervals are ultimately computed, they should be attached to these rates rather than to isolated anecdotes. The key interpretive question is whether proof brittleness is concentrated in one pathological class or whether non-trivial breakage appears across multiple transformation families. Evidence for the latter would come from several classes exhibiting materially non-zero $BR(class_i)$ values and from those effects persisting across more than one seed-program stratum rather than being confined to tutorial-scale examples.
+
+\subsection{Baseline Recovery Comparison}
+
+We next evaluate baseline recovery on the broken subset. For each baseline $B_k \in \{B1, B2, B3\}$, let $RR(B_k)$ denote the recovery rate over the instances that fail immediately after transformation. The central comparison is not only which baseline attains the highest $RR(B_k)$, but also how their recovered subsets overlap and which benchmark items remain unrepaired after all three have been applied. That remaining subset defines the residual repair gap, denoted here as $Gap_{\mathit{residual}}$. A strong version of P1's empirical claim is that $Gap_{\mathit{residual}}$ remains substantial across multiple refactoring classes and seed strata even when B2 exploits nearby-version continuity and B3 is allowed verifier-guided retries. If that pattern holds, then the benchmark shows not merely that breakage exists, but that simple recovery strategies leave meaningful nearby-version proof breakage unresolved.
+
+\input{tables/table_breakage_recovery}
+
+\subsection{Cost and Effort Proxies}
+
+The recovery comparison should be read together with lightweight cost proxies. For each baseline, we record verifier wall-clock time, and for B3 we additionally record retry count, prompt-token usage, completion-token usage, and total token-derived cost. These quantities are not direct measures of human effort, but they do help distinguish cheap robustness from expensive recovery. In particular, the paper should report whether improvements in $RR(B3)$ come with large retry or token overhead relative to B1 and B2, and whether those costs vary meaningfully across refactoring classes or seed-program strata. If some classes exhibit modest recovery only at disproportionate B3 cost, that finding strengthens the interpretation that the maintenance burden is not adequately characterized by success rate alone.
+
+\subsection{Failure-Mode Taxonomy and Residual Gap}
+
+To move beyond aggregate success rates, we analyze the broken subset through the failure-mode labels introduced in Section~3. Let $L_{\mathit{assert}}$, $L_{\mathit{inv}}$, $L_{\mathit{lemma}}$, $L_{\mathit{trigger}}$, $L_{\mathit{ghost}}$, and $L_{\mathit{tool}}$ denote the counts associated with the six label categories. These correspond respectively to broken assertion flow, weakened loop invariants, brittle lemma or helper-application structure, trigger or quantifier sensitivity, ghost-code or proof-hint displacement, and unexplained or tool-sensitive failure. This view helps distinguish which kinds of nearby-version proof breakage are partially addressed by surface transfer and which persist into $Gap_{\mathit{residual}}$ even after B3. In particular, a residual concentration in lemma-structure, invariant, or trigger-sensitive cases would motivate stronger symbolic repair in later work more convincingly than a residual dominated by simple renaming failures.
+
+\input{tables/table_failure_modes}
+
+At the same time, unrepaired cases should not automatically be interpreted as semantically deep failures. Some may still reflect solver brittleness, hidden context sensitivity, or benchmark-local effects that fall outside the expressive reach of B1--B3 without requiring fundamentally new semantics-aware reasoning. The taxonomy is therefore used here as an analysis device for interpreting the residual repair gap, not as a definitive theory of proof failure.
+
+\subsection{Takeaways}
+
+Taken together, the results should make one claim legible even before exact numbers are inserted: Dataset~A exposes nearby-version proof breakage as a measurable maintenance problem, that problem appears across multiple semantics-preserving refactoring classes rather than in a single corner case, and simple baseline recovery leaves a non-trivial residual repair gap. In other words, the benchmark is designed to show not just that verified code can break under evolution, but that nearby-version proof maintenance remains a structured empirical problem after the easiest fixes have already been tried. That is the empirical substrate this paper aims to establish so that later repair work can be evaluated against it rather than inferred from isolated examples.

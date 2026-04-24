@@ -1,0 +1,62 @@
+\documentclass[runningheads]{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[table]{xcolor}
+\usepackage{amsmath}
+
+\newif\ifincludeappendix
+\includeappendixtrue
+
+\definecolor{missingred}{RGB}{180,0,0}
+\newcommand{\missing}[1]{\textcolor{missingred}{\textbf{[MISSING: #1]}}}
+\newcommand{\tbdcell}[1]{\textcolor{missingred}{\textbf{#1}}}
+
+\begin{document}
+
+\title{Brittleness Under Refactoring: A Dafny Benchmark and Empirical Study}
+\titlerunning{Brittleness Under Refactoring}
+
+\author{\missing{Author names}}
+\authorrunning{F. Author et al.}
+
+\institute{
+\missing{Affiliation 1}, \missing{City}, \missing{Country}\\
+\email{\missing{Author 1 email}}
+\and
+\missing{Affiliation 2}, \missing{City}, \missing{Country}\\
+\email{\missing{Author 2 email}}
+}
+
+\maketitle
+
+\begin{abstract}
+Verified software evolves, but the maintenance cost of preserving verification under routine structural change remains poorly characterized. This paper introduces Dataset~A, a maintenance-centred Dafny benchmark for nearby-version proof breakage under semantics-preserving refactoring. The benchmark organizes transformed instances by seed-program stratum, refactoring class, verification outcome, and failure-mode label, and it evaluates three simple recovery baselines---re-verification, syntactic transfer, and LLM-only repair---to measure how much of the resulting breakage can be removed without structured reasoning. The paper's contribution is therefore empirical rather than algorithmic: it turns proof brittleness under software evolution into a reproducible benchmark problem and uses that benchmark to expose the residual repair gap that remains after lightweight recovery.
+
+\keywords{formal verification \and proof maintenance \and refactoring \and Dafny \and empirical software engineering}
+\end{abstract}
+
+\paragraph{Artifact availability.}
+Artifact URL: \missing{Artifact URL}. Anonymized package: \missing{Anonymous artifact package name}. Docker image: \missing{Docker image reference}. Replay command: \missing{Replay command}.
+
+\input{sections/01_intro}
+\input{sections/02_background}
+\input{sections/03_dataset_and_refactorings}
+\input{sections/04_baselines_and_setup}
+\input{sections/05_results}
+\input{sections/06_threats_to_validity}
+\input{sections/07_related_work}
+\input{sections/08_conclusion}
+
+\ifincludeappendix
+\appendix
+\input{sections/appendix_artifact}
+\input{sections/appendix_prompt}
+\fi
+
+\bibliographystyle{splncs04}
+\bibliography{../references}
+
+\end{document}

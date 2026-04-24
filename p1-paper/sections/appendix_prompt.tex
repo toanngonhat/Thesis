@@ -1,0 +1,39 @@
+\section{Standardized LLM Prompt and Retry Protocol}
+\label{app:prompt}
+
+\paragraph{Prompt template.}
+The exact B3 prompt should remain fixed across benchmark items except for the per-instance fields listed below. The working draft template is:
+\begin{quote}
+\missing{Exact B3 prompt}
+\end{quote}
+The per-instance fields that vary across cases are:
+\begin{itemize}
+  \item old program: \missing{Old-program field},
+  \item transformed program: \missing{Transformed-program field},
+  \item verifier error: \missing{Verifier-error field},
+  \item repair instruction: \missing{Repair instruction}.
+\end{itemize}
+
+\paragraph{Retry policy.}
+The fixed retry protocol for B3 is:
+\begin{itemize}
+  \item maximum of 5 retries,
+  \item verifier feedback appended between retries,
+  \item temperature fixed at 0.2,
+  \item success only on proof-checked output.
+\end{itemize}
+The exact verifier-feedback wrapper appended between retries is \missing{Verifier-feedback wrapper}.
+
+\paragraph{Logging fields.}
+Each attempt records the following fields:
+\begin{itemize}
+  \item model identifier: \missing{Model ID},
+  \item prompt tokens,
+  \item completion tokens,
+  \item wall-clock time,
+  \item verifier outcome,
+  \item retry count.
+\end{itemize}
+
+\paragraph{Protocol stability.}
+To preserve comparability across benchmark cases, the following elements must remain fixed: \missing{Prompt prefix}, \missing{Execution environment}, and \missing{Verifier invocation}.

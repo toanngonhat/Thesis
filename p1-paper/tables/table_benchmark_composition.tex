@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Planned benchmark-composition summary. The table is intended to show that Dataset~A covers multiple seed strata and refactoring classes while retaining enough valid nearby-version pairs for baseline evaluation.}
+\label{tab:benchmark-composition}
+\begin{tabular}{lrrr}
+\toprule
+Stratum / class & Seeds & Items & Eval-ready \\
+\midrule
+Tutorial / educational & \tbdcell{$N^{\mathrm{tut}}_{\mathit{seed}}$} & \tbdcell{$N^{\mathrm{tut}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{tut}}_{\mathit{eval}}$} \\
+Benchmark / suite & \tbdcell{$N^{\mathrm{bench}}_{\mathit{seed}}$} & \tbdcell{$N^{\mathrm{bench}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{bench}}_{\mathit{eval}}$} \\
+Proof-engineering-heavy & \tbdcell{$N^{\mathrm{heavy}}_{\mathit{seed}}$} & \tbdcell{$N^{\mathrm{heavy}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{heavy}}_{\mathit{eval}}$} \\
+\midrule
+Rename & \tbdcell{$-$} & \tbdcell{$N^{\mathrm{rename}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{rename}}_{\mathit{eval}}$} \\
+Helper extraction & \tbdcell{$-$} & \tbdcell{$N^{\mathrm{extract}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{extract}}_{\mathit{eval}}$} \\
+Inlining & \tbdcell{$-$} & \tbdcell{$N^{\mathrm{inline}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{inline}}_{\mathit{eval}}$} \\
+Statement reordering & \tbdcell{$-$} & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{eval}}$} \\
+Loop reshaping & \tbdcell{$-$} & \tbdcell{$N^{\mathrm{loop}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{loop}}_{\mathit{eval}}$} \\
+Contract factoring & \tbdcell{$-$} & \tbdcell{$N^{\mathrm{contract}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{contract}}_{\mathit{eval}}$} \\
+Ghost-code movement & \tbdcell{$-$} & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{items}}$} & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{eval}}$} \\
+\midrule
+Total & \tbdcell{$N_{\mathit{seed}}$} & \tbdcell{$N_{\mathit{items}}$} & \tbdcell{$N_{\mathit{eval}}$} \\
+\bottomrule
+\end{tabular}
+\end{table}

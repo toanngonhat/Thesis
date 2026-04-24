@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Planned failure-mode distribution. The table is intended to show which proof-relevant failure categories dominate the broken subset and which categories continue to populate the residual repair gap after baseline recovery.}
+\label{tab:failure-modes}
+\begin{tabular}{lrr}
+\toprule
+Failure-mode label & Broken subset & Residual gap subset \\
+\midrule
+Broken assertion flow & \tbdcell{$L_{\mathit{assert}}$} & \tbdcell{$L^{\mathrm{res}}_{\mathit{assert}}$} \\
+Weakened loop invariants & \tbdcell{$L_{\mathit{inv}}$} & \tbdcell{$L^{\mathrm{res}}_{\mathit{inv}}$} \\
+Brittle lemma / helper structure & \tbdcell{$L_{\mathit{lemma}}$} & \tbdcell{$L^{\mathrm{res}}_{\mathit{lemma}}$} \\
+Trigger / quantifier sensitivity & \tbdcell{$L_{\mathit{trigger}}$} & \tbdcell{$L^{\mathrm{res}}_{\mathit{trigger}}$} \\
+Ghost-code / proof-hint displacement & \tbdcell{$L_{\mathit{ghost}}$} & \tbdcell{$L^{\mathrm{res}}_{\mathit{ghost}}$} \\
+Unexplained / tool-sensitive failure & \tbdcell{$L_{\mathit{tool}}$} & \tbdcell{$L^{\mathrm{res}}_{\mathit{tool}}$} \\
+\bottomrule
+\end{tabular}
+\end{table}

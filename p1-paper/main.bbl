@@ -1,0 +1,140 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{Adams2015Tactician}
+Adams, M.: Refactoring proofs with tactician. In: SEFM 2015 Collocated
+  Workshops (2015),
+  \url{https://proof-technologies.com/papers/tactician_hofm2015.html}
+
+\bibitem{Fedchin2023ToolkitTestingDafny}
+Fedchin, A., Dean, T., Foster, J.S., Mercer, E., Rakamaric, Z., Reger, G.,
+  Rungta, N., Salkeld, R., Wagner, L., Waldrip, C.: A toolkit for automated
+  testing of dafny. In: NASA Formal Methods (2023),
+  \url{https://www.amazon.science/publications/a-toolkit-for-automated-testing-of-dafny}
+
+\bibitem{Feng2020CodeBERT}
+Feng, Z., et~al.: Codebert: A pre-trained model for programming and natural
+  languages. EMNLP Findings  (2020), \url{https://arxiv.org/abs/2002.08155}
+
+\bibitem{First2020TacTok}
+First, E., Brun, Y., Guha, A.: Tactok: semantics-aware proof synthesis.
+  Proceedings of the ACM on Programming Languages  (2020).
+  \doi{10.1145/3428299}, \url{https://doi.org/10.1145/3428299}
+
+\bibitem{Fried2022InCoder}
+Fried, D., et~al.: Incoder: A generative model for code infilling and
+  synthesis. ICLR  (2022), \url{https://arxiv.org/abs/2204.05999}
+
+\bibitem{Gazzola2017AutomaticSoftwareRepair}
+Gazzola, L., Micucci, D., Mariani, L.: Automatic software repair: A survey.
+  IEEE Transactions on Software Engineering  (2017).
+  \doi{10.1109/TSE.2017.2755013},
+  \url{https://doi.org/10.1109/TSE.2017.2755013}
+
+\bibitem{Grov2016VerificationPatternsDafny}
+Grov, G., Lin, Y., Tumas, V.: Mechanised verification patterns for dafny. In:
+  FM 2016: Formal Methods. Lecture Notes in Computer Science, vol.~9995 (2016).
+  \doi{10.1007/978-3-319-48989-6_20},
+  \url{https://doi.org/10.1007/978-3-319-48989-6_20}
+
+\bibitem{Guo2020GraphCodeBERT}
+Guo, D., et~al.: Graphcodebert: Pre-training code representations with data
+  flow. ICLR  (2020), \url{https://arxiv.org/abs/2009.08366}
+
+\bibitem{Irfan2022TestingDafny}
+Irfan, A., Porncharoenwase, S., Rakamaric, Z., Rungta, N., Torlak, E.: Testing
+  dafny (experience paper). In: ISSTA (2022),
+  \url{https://ahmed-irfan.github.io/papers/issta22.pdf}
+
+\bibitem{Kim2012RefactoringInTheWild}
+Kim, M., et~al.: Refactoring in the wild: A study of refactoring decisions in
+  open source projects. In: ICSE (2012). \doi{10.1109/ICSE.2012.6227218},
+  \url{https://doi.org/10.1109/ICSE.2012.6227218}
+
+\bibitem{Leino2010Dafny}
+Leino, K.R.M.: Dafny: An automatic program verifier for functional correctness.
+  In: LPAR-16 (2010). \doi{10.1007/978-3-642-17511-4_20},
+  \url{https://doi.org/10.1007/978-3-642-17511-4_20}
+
+\bibitem{Leino2010VSTTEBenchmarks}
+Leino, K.R.M.: Dafny meets the verification benchmarks challenge. In: VSTTE
+  (2010),
+  \url{https://www.microsoft.com/en-us/research/publication/dafny-meets-the-verification-benchmarks-challenge/}
+
+\bibitem{DafnyBench2024}
+Loughridge, C., Sun, Q., Ahrenbach, S., Cassano, F., Sun, C., Sheng, Y.,
+  Mudide, A., Misu, M.R.H., Amin, N., Tegmark, M.: Dafnybench: A benchmark for
+  formal software verification. arXiv preprint arXiv:2406.08467  (2024),
+  \url{https://arxiv.org/abs/2406.08467}
+
+\bibitem{Mens2004RefactoringSurvey}
+Mens, T., Tourwe, T.: A survey of software refactoring. IEEE Transactions on
+  Software Engineering  (2004). \doi{10.1109/TSE.2004.1265817},
+  \url{https://doi.org/10.1109/TSE.2004.1265817}
+
+\bibitem{Misu2024AIAssistedDafny}
+Misu, M.R.H., Lopes, C.V., Ma, I., Noble, J.: Towards ai-assisted synthesis of
+  verified dafny methods. arXiv preprint arXiv:2402.00247  (2024),
+  \url{https://arxiv.org/abs/2402.00247}
+
+\bibitem{Mugnier2025ImpactVerification}
+Mugnier, E., Zhou, Y., Jhala, R., Coblenz, M.: On the impact of formal
+  verification on software development. Proceedings of the ACM on Programming
+  Languages  \textbf{9}(OOPSLA2) (2025). \doi{10.1145/3763181},
+  \url{https://doi.org/10.1145/3763181}
+
+\bibitem{SanchezStern2023Passport}
+Sanchez-Stern, A., First, E., Zhou, T., Kaufman, Z., Brun, Y., Ringer, T.:
+  Passport: Improving automated formal verification using identifiers. ACM
+  Transactions on Programming Languages and Systems  (2023).
+  \doi{10.1145/3593374}, \url{https://doi.org/10.1145/3593374}
+
+\bibitem{Tsantalis2014RefactoringOperations}
+Tsantalis, N., et~al.: A large-scale study on the usage of refactoring
+  operations. IEEE Transactions on Software Engineering  (2014).
+  \doi{10.1109/TSE.2014.2301518},
+  \url{https://doi.org/10.1109/TSE.2014.2301518}
+
+\bibitem{Wang2026TACoDafny}
+Wang, C., Scazzariello, M., Kostic, D., Chiesa, M.: Toward automated,
+  contamination-free dafny benchmark generation. Dafny 2026 workshop preprint
+  (2026),
+  \url{https://popl26.sigplan.org/details/dafny-2026-papers/17/Toward-Automated-Contamination-free-Dafny-Benchmark-Generation}
+
+\bibitem{Whiteside2011ProofScriptRefactoring}
+Whiteside, I., Aspinall, D., Dixon, L., Grov, G.: Towards formal proof script
+  refactoring. In: Intelligent Computer Mathematics. Lecture Notes in Computer
+  Science, vol.~6824 (2011). \doi{10.1007/978-3-642-22673-1_18},
+  \url{https://doi.org/10.1007/978-3-642-22673-1_18}
+
+\bibitem{Whiteside2013RefactoringProofs}
+Whiteside, I.J.: Refactoring Proofs. Ph.D. thesis, The University of Edinburgh
+  (2013), \url{https://era.ed.ac.uk/handle/1842/7970}
+
+\bibitem{Xia2023APRWithPLM}
+Xia, C.S., et~al.: Automated program repair with pretrained language models.
+  ICSE  (2023). \doi{10.1109/ICSE48619.2023.00072},
+  \url{https://doi.org/10.1109/ICSE48619.2023.00072}
+
+\bibitem{Xu2026DafnyComp}
+Xu, X., Li, X., Qu, X., Fu, J., Yuan, B.: Local success does not compose:
+  Benchmarking large language models for compositional formal verification.
+  ICLR  (2026), \url{https://openreview.net/forum?id=y4kAMUBqLq}
+
+\bibitem{Yan2025ReFormDafny}
+Yan, C., Che, F., Huang, X., Xu, X., Li, X., Li, Y., Qu, X., Shi, J., Lin, C.,
+  Yang, Y., Yuan, B., Zhao, H., Qiao, Y., Zhou, B., Fu, J.: Re:form -- reducing
+  human priors in scalable formal software verification with rl in llms: A
+  preliminary study on dafny. OpenReview preprint  (2025),
+  \url{https://openreview.net/forum?id=cAQmIS4GOe}
+
+\bibitem{Zaidman2010CoEvolutionProductionTest}
+Zaidman, A., van Rompaey, B., Demeyer, S., et~al.: Studying the co-evolution of
+  production and test code in open source and industrial developer test
+  processes through repository mining. Empirical Software Engineering  (2010).
+  \doi{10.1007/s10664-010-9143-7},
+  \url{https://doi.org/10.1007/s10664-010-9143-7}
+
+\end{thebibliography}

@@ -1,0 +1,50 @@
+\section{Baselines and Experimental Setup}
+
+\subsection{Why These Baselines}
+
+P1 evaluates three simple recovery strategies because the goal of the paper is to measure the residual repair gap, not to survey the full repair design space. Each baseline isolates a different notion of reuse over the nearby-version pairs in Dataset~A. B1 captures the status quo in which a refactored program is simply re-verified without any intervention. B2 captures nearby-version continuity by attempting to reuse proof-relevant source artifacts from the seed version through surface-level transfer. B3 captures the strongest lightweight generation alternative by asking a modern language model to produce a repair directly from the broken transformed program and verifier feedback. Taken together, these baselines are sufficient to reveal whether semantics-preserving refactoring leaves a substantial amount of nearby-version proof breakage that later structured repair methods would still need to address.
+
+\subsection{Baseline Definitions}
+
+\paragraph{B1: Re-verification.}
+B1 is the lower-bound baseline. For each Dataset~A item, Dafny is rerun on the transformed program exactly as produced by the benchmark pipeline, with no attempt to edit, transfer, or repair proof-relevant structure. Any success under B1 therefore reflects robustness of the original proof to the refactoring itself rather than recovery capability.
+
+\paragraph{B2: Syntactic transfer.}
+B2 is a nearby-version continuity baseline. It transfers proof-relevant source artifacts from the seed program to the transformed version using rename-aware and diff-aware heuristics. In practice, this means that contracts, assertions, loop invariants, ghost code, and similar annotations are projected into the transformed file when a plausible surface correspondence can be established. The intent is not to perform semantic diagnosis, but to test how much refactoring-induced breakage can be removed by lightweight reuse of existing proof structure.
+
+\paragraph{B3: LLM-only repair.}
+B3 is the standardized LLM-only repair baseline. The model is fixed to \texttt{claude-sonnet-4-6} with temperature 0.2. Each instance is given up to five retries, verifier feedback is appended between retries, and success is counted only when the resulting program re-verifies in Dafny. This baseline is intentionally protocol-driven rather than open-ended: it measures what a strong lightweight generation strategy can recover under one fixed setup, not the maximum possible performance of language-model-based repair under unlimited prompt engineering. Appendix~\ref{app:prompt} records the prompt template, retry policy, and logging fields used to keep B3 comparable across benchmark cases.
+
+\subsection{Benchmark Axes and Analysis Units}
+
+The unit of analysis throughout this paper is a single Dataset~A benchmark item: one verified seed program paired with one transformed nearby-version variant and its associated outcomes. Results are reported along four primary axes: seed-program stratum, refactoring class, baseline type, and post-refactoring verification or recovery outcome. This choice keeps the evaluation aligned with the benchmark specification introduced in Section~3. Optional toolchain or solver strata may be useful in future extensions, but they are not part of the core analysis here. The paper's primary question remains source-level proof brittleness under semantics-preserving refactoring, together with the amount of baseline recovery that can be achieved on those same benchmark items.
+
+\subsection{Execution Environment and Protocol}
+
+All experiments are recorded with a fixed execution environment that includes the Dafny version, underlying solver or toolchain version, hardware or container configuration, per-run timeout budget, and per-attempt logging fields for verifier wall-clock time and LLM token or cost accounting. These records are part of the benchmark metadata rather than an afterthought because some observed failures may depend on the exact verification environment in which they are replayed.
+
+The protocol is intentionally simple and uniform. A transformed benchmark item is first generated and validated by the pipeline in Section~3. B1 is then run on the transformed program without edits. B2 is applied next to test lightweight transfer of proof-relevant structure. B3 is finally run on the broken subset under the fixed prompt and retry protocol. After those runs complete, aggregate metrics are computed over the same underlying set of benchmark items. This ordering ensures that all baselines are compared on a common evaluation substrate and that later analyses can attribute differences to recovery strategy rather than to changes in benchmark composition.
+
+\subsection{Metrics}
+
+This paper reports a compact set of metrics aimed at characterizing both brittleness and the size of the residual repair gap. At the benchmark level, it reports composition statistics for Dataset~A, including the number of seeds, transformed items, and items that survive to baseline evaluation. At the outcome level, it reports breakage rate by refactoring class and recovery rate by baseline. At the cost level, it records verifier wall-clock time together with B3 token usage and retry cost as lightweight effort proxies. At the analysis level, it reports the distribution of failure-mode labels and the residual repair gap that remains after B1, B2, and B3 have all been applied. Where confidence intervals are eventually reported, they should be treated as an optional analysis layer attached to the final measurement pipeline rather than as a prerequisite for the paper's basic claims.
+
+We use the following notation throughout the evaluation. Let $N_{\mathit{items}}$ be the number of transformed instances retained by the benchmark pipeline and $N_{\mathit{eval}}$ the number of instances that survive to baseline evaluation. For each refactoring class $class_i$, let $N_{\mathit{attempted}}(class_i)$ denote the number of attempted transformations and $N_{\mathit{broken}}(class_i)$ the number of those instances that fail verification immediately after transformation. Let $N_{\mathit{broken}}$ denote the total broken subset, $N_{\mathit{recovered}}(B_k)$ the number of broken instances repaired by baseline $B_k$, and $N_{\mathit{unrecovered}}(B1,B2,B3)$ the number left broken after all three baselines have been applied.
+
+\begin{align}
+SR &= \frac{N_{\mathit{eval}}}{N_{\mathit{items}}} \\
+BR(class_i) &= \frac{N_{\mathit{broken}}(class_i)}{N_{\mathit{attempted}}(class_i)} \\
+RR(B_k) &= \frac{N_{\mathit{recovered}}(B_k)}{N_{\mathit{broken}}} \\
+Gap_{\mathit{residual}} &= \frac{N_{\mathit{unrecovered}}(B1,B2,B3)}{N_{\mathit{broken}}}
+\end{align}
+
+To expose lightweight effort as well as success, we also report average verifier cost and average B3 token cost:
+\begin{align}
+Cost_{\mathit{ver}}(B_k) &= \frac{1}{N_{\mathit{run}}(B_k)} \sum_t time(t, B_k) \\
+Cost_{\mathit{tok}}(B3) &= \frac{1}{N_{\mathit{run}}(B3)} \sum_t tokens(t, B3)
+\end{align}
+These formulas make the interpretive structure of Section~5 explicit: the paper evaluates not only whether breakage occurs, but also how often simple baselines recover it and at what cost.
+
+\subsection{Empirical Success Criteria}
+
+P1 treats its empirical thesis as successful if two interpretation criteria are met. First, nearby-version proof breakage should be clearly non-trivial, operationalized here as at least three refactoring classes exhibiting breakage rate $\geq 20\%$. Second, the residual repair gap should remain substantial after simple baselines, operationalized here as no baseline exceeding $70\%$ recovery on Dataset~A. These criteria are not intended as universal thresholds for all future benchmarks. Instead, they give the paper a concrete way to judge whether semantics-preserving refactoring exposes a practically meaningful maintenance problem that is not already dissolved by simple replay, surface transfer, or lightweight generation.

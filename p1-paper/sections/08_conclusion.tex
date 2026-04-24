@@ -1,0 +1,8 @@
+\section{Conclusion}
+
+This paper argues that proof brittleness under semantics-preserving refactoring is a measurable maintenance problem in Dafny and that this problem deserves its own benchmark-and-evaluation substrate. The main contribution is therefore not a repair algorithm, but a maintenance-centred benchmark specification for nearby-version proof breakage, together with an empirical evaluation that measures how often verification fails under controlled refactorings and how much of that failure can be recovered by simple baselines.
+
+The intended empirical outcome is a clear residual repair gap: even after re-verification, syntactic transfer, and LLM-only repair, a substantial class of nearby-version failures should remain unresolved. By organizing those failures by refactoring class, source stratum, and proof-oriented failure mode, the paper turns an often anecdotal maintenance complaint into a reproducible benchmark problem. That is the paper's standalone value: it makes proof maintenance under evolution measurable rather than merely discussable.
+
+\paragraph{Bridge to later work.}
+The benchmark, taxonomy, and baseline results produced here also make later symbolic repair work measurable rather than merely imaginable. In that sense, this paper is both a complete empirical study and the evaluation substrate on which later work can test whether structured repair genuinely closes the residual gap identified here.

@@ -1,0 +1,133 @@
+\relax 
+\citation{Mens2004RefactoringSurvey}
+\citation{Kim2012RefactoringInTheWild,Tsantalis2014RefactoringOperations}
+\citation{Zaidman2010CoEvolutionProductionTest}
+\@writefile{toc}{\contentsline {title}{Brittleness Under Refactoring: A Dafny Benchmark and Empirical Study}{1}\protected@file@percent }
+\@writefile{toc}{\authcount {1}}
+\@writefile{toc}{\contentsline {author}{\leavevmode {\color  {missingred}\textbf  {[MISSING: Author names]}}}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Artifact availability.}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}\protected@file@percent }
+\citation{Leino2010Dafny}
+\citation{Grov2016VerificationPatternsDafny}
+\citation{Mugnier2025ImpactVerification}
+\citation{Whiteside2011ProofScriptRefactoring,Whiteside2013RefactoringProofs,Adams2015Tactician}
+\citation{DafnyBench2024,Wang2026TACoDafny,Xu2026DafnyComp}
+\citation{Gazzola2017AutomaticSoftwareRepair,Xia2023APRWithPLM,First2020TacTok,SanchezStern2023Passport,Misu2024AIAssistedDafny}
+\citation{Zaidman2010CoEvolutionProductionTest}
+\citation{Whiteside2011ProofScriptRefactoring,Whiteside2013RefactoringProofs}
+\citation{Leino2010Dafny}
+\citation{Grov2016VerificationPatternsDafny}
+\citation{Mugnier2025ImpactVerification}
+\citation{Mens2004RefactoringSurvey,Kim2012RefactoringInTheWild,Tsantalis2014RefactoringOperations}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background and Study Framing}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Proof Maintenance Under Evolution}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Why Dafny}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Semantics-Preserving Refactoring in This Paper}{3}\protected@file@percent }
+\citation{Gazzola2017AutomaticSoftwareRepair,First2020TacTok,SanchezStern2023Passport}
+\citation{DafnyBench2024,Xu2026DafnyComp,Wang2026TACoDafny}
+\citation{Leino2010Dafny,Grov2016VerificationPatternsDafny}
+\citation{Irfan2022TestingDafny,Fedchin2023ToolkitTestingDafny}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Study Objective and Evaluation Lens}{4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset and Refactoring Benchmark}{4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Dataset A Overview}{4}\protected@file@percent }
+\citation{Mens2004RefactoringSurvey,Kim2012RefactoringInTheWild,Tsantalis2014RefactoringOperations}
+\citation{DafnyBench2024,Xu2026DafnyComp,Wang2026TACoDafny}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Seed Corpus and Strata}{5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Benchmark Design}{5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Refactoring Catalog}{5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Generation Pipeline}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Failure-Mode Labels and Benchmark Outputs}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Baselines and Experimental Setup}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Why These Baselines}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Baseline Definitions}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{B1: Re-verification.}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{B2: Syntactic transfer.}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{B3: LLM-only repair.}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Benchmark Axes and Analysis Units}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Execution Environment and Protocol}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Metrics}{9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Planned benchmark-composition summary. The table is intended to show that Dataset\nobreakspace  {}A covers multiple seed strata and refactoring classes while retaining enough valid nearby-version pairs for baseline evaluation.}}{10}\protected@file@percent }
+\newlabel{tab:benchmark-composition}{{1}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Empirical Success Criteria}{10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Benchmark Composition}{10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Planned breakage and recovery summary. The table is intended to show which refactoring classes are most brittle and how much of that breakage is removed by B1, B2, and B3 before the residual repair gap is measured.}}{11}\protected@file@percent }
+\newlabel{tab:breakage-recovery}{{2}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Breakage Rate by Refactoring Class}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Baseline Recovery Comparison}{11}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Planned failure-mode distribution. The table is intended to show which proof-relevant failure categories dominate the broken subset and which categories continue to populate the residual repair gap after baseline recovery.}}{12}\protected@file@percent }
+\newlabel{tab:failure-modes}{{3}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Cost and Effort Proxies}{12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Failure-Mode Taxonomy and Residual Gap}{12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Takeaways}{13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Threats to Validity}{13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Seed-program representativeness.}{13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Refactoring realism.}{13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Semantic-preservation assumptions.}{13}\protected@file@percent }
+\citation{Mens2004RefactoringSurvey}
+\citation{Kim2012RefactoringInTheWild,Tsantalis2014RefactoringOperations}
+\citation{Zaidman2010CoEvolutionProductionTest}
+\@writefile{toc}{\contentsline {paragraph}{Baseline sensitivity.}{14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Verifier and toolchain sensitivity.}{14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{External validity.}{14}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Refactoring and software evolution.}{14}\protected@file@percent }
+\citation{Whiteside2011ProofScriptRefactoring}
+\citation{Whiteside2013RefactoringProofs}
+\citation{Adams2015Tactician}
+\citation{Grov2016VerificationPatternsDafny}
+\citation{Irfan2022TestingDafny,Fedchin2023ToolkitTestingDafny}
+\citation{Mugnier2025ImpactVerification}
+\citation{Gazzola2017AutomaticSoftwareRepair,Xia2023APRWithPLM}
+\citation{First2020TacTok,SanchezStern2023Passport}
+\citation{Feng2020CodeBERT,Guo2020GraphCodeBERT,Fried2022InCoder}
+\citation{Misu2024AIAssistedDafny}
+\citation{DafnyBench2024}
+\citation{Xu2026DafnyComp}
+\citation{Yan2025ReFormDafny}
+\citation{Leino2010Dafny,Leino2010VSTTEBenchmarks}
+\citation{DafnyBench2024,Wang2026TACoDafny,Xu2026DafnyComp}
+\@writefile{toc}{\contentsline {paragraph}{Verification engineering and proof maintenance.}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Automated repair and learning-based assistance.}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Gap and positioning of P1.}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bridge to later work.}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Artifact and Reproducibility Details}{16}\protected@file@percent }
+\newlabel{app:artifact}{{A}{16}}
+\@writefile{toc}{\contentsline {paragraph}{Artifact contents.}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Environment.}{16}\protected@file@percent }
+\bibstyle{splncs04}
+\bibdata{../references}
+\bibcite{Adams2015Tactician}{1}
+\@writefile{toc}{\contentsline {paragraph}{Replay workflow.}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Anonymization and release.}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Standardized LLM Prompt and Retry Protocol}{17}\protected@file@percent }
+\newlabel{app:prompt}{{B}{17}}
+\@writefile{toc}{\contentsline {paragraph}{Prompt template.}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Retry policy.}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Logging fields.}{17}\protected@file@percent }
+\bibcite{Fedchin2023ToolkitTestingDafny}{2}
+\bibcite{Feng2020CodeBERT}{3}
+\bibcite{First2020TacTok}{4}
+\bibcite{Fried2022InCoder}{5}
+\bibcite{Gazzola2017AutomaticSoftwareRepair}{6}
+\bibcite{Grov2016VerificationPatternsDafny}{7}
+\bibcite{Guo2020GraphCodeBERT}{8}
+\bibcite{Irfan2022TestingDafny}{9}
+\bibcite{Kim2012RefactoringInTheWild}{10}
+\bibcite{Leino2010Dafny}{11}
+\bibcite{Leino2010VSTTEBenchmarks}{12}
+\bibcite{DafnyBench2024}{13}
+\bibcite{Mens2004RefactoringSurvey}{14}
+\bibcite{Misu2024AIAssistedDafny}{15}
+\@writefile{toc}{\contentsline {paragraph}{Protocol stability.}{18}\protected@file@percent }
+\bibcite{Mugnier2025ImpactVerification}{16}
+\bibcite{SanchezStern2023Passport}{17}
+\bibcite{Tsantalis2014RefactoringOperations}{18}
+\bibcite{Wang2026TACoDafny}{19}
+\bibcite{Whiteside2011ProofScriptRefactoring}{20}
+\bibcite{Whiteside2013RefactoringProofs}{21}
+\bibcite{Xia2023APRWithPLM}{22}
+\bibcite{Xu2026DafnyComp}{23}
+\bibcite{Yan2025ReFormDafny}{24}
+\bibcite{Zaidman2010CoEvolutionProductionTest}{25}

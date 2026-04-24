@@ -1,0 +1,3 @@
+seed_stratum,attempted,eval_ready,broken_b1,timeout_b1,b2_run,b2_recovered,residual_after_b2,breakage_rate,recovery_rate_b2_over_broken
+benchmark_example_suite,15,15,6,0,5,3,3,0.400,0.500
+proof_engineering_case,9,9,3,0,3,1,2,0.333,0.333

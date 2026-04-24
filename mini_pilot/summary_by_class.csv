@@ -1,0 +1,5 @@
+refactoring_class,attempted,eval_ready,broken_b1,timeout_b1,b2_run,b2_recovered,residual_after_b2,breakage_rate,recovery_rate_b2_over_broken
+ghost_code_movement,3,3,2,0,1,0,2,0.667,0.000
+helper_extraction,8,8,7,0,7,4,3,0.875,0.571
+rename,8,8,0,0,0,0,0,0.000,NA
+statement_reordering,5,5,0,0,0,0,0,0.000,NA

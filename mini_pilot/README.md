@@ -1,10 +1,10 @@
 # `mini_pilot`
 
-Small realistic Dafny pilot for checking whether the current P1 metrics, formulas, and result tables behave sensibly before a full Dataset~A pipeline exists.
+Broader realistic Dafny pilot for checking whether the current P1 metrics, formulas, and result tables behave sensibly before a full Dataset~A pipeline exists.
 
 ## Contents
 
-- `seeds/`: three copied seeds from the official `dafny-lang/dafny` repository
+- `seeds/`: eight copied seeds from the official `dafny-lang/dafny` repository
 - `transformed/`: manually created semantics-preserving refactoring variants
 - `b2/`: lightweight B2-style follow-up variants for broken transformed items
 - `seed_metadata.csv`: provenance and seed-role metadata
@@ -12,18 +12,19 @@ Small realistic Dafny pilot for checking whether the current P1 metrics, formula
 - `run_pilot.py`: runs Dafny verification and materializes the pilot results
 - `seed_results.csv`: seed verification outcomes
 - `results.csv`: one row per transformed item with B1/B2/B3 outcome fields
+- `summary_by_class.csv`: derived class-level breakage and recovery summary
+- `summary_by_stratum.csv`: derived stratum-level breakage and recovery summary
 - `pilot_memo.md`: short interpretation memo on what the metrics did and did not capture cleanly
 - `LICENSE.dafny-repo.txt`: copied MIT license from the upstream Dafny repository
 
 ## Seed Set
 
-The pilot uses three official benchmark-style examples from `dafny-lang/dafny`:
+The pilot uses eight official examples from `dafny-lang/dafny` across two strata:
 
-- `summax`: loop invariant and arithmetic postcondition reasoning
-- `invert`: assertion-heavy quantifier reasoning
-- `findzero`: ghost state, object invariants, and linked-structure reasoning
+- `benchmark_example_suite`: `summax`, `invert`, `findzero`, `queens`, `deque`
+- `proof_engineering_case`: `twowaysort`, `ringbuffer`, `bfs`
 
-All three are drawn from the Dafny repository's VSComp 2010 example suite and verify on local Dafny `4.11.0`.
+These seeds cover loop invariants, quantified search invariants, dynamic frames, ghost-state reasoning, sequence views, and graph reachability. All eight verify on local Dafny `4.11.0`.
 
 ## Refactoring Classes Used
 
@@ -32,7 +33,7 @@ All three are drawn from the Dafny repository's VSComp 2010 example suite and ve
 - `statement_reordering`
 - `ghost_code_movement`
 
-The pilot contains 9 transformed items in total. B3 is intentionally deferred in this first pass, so `b3_outcome` is recorded as `not_run`.
+The pilot contains 24 transformed items in total. B3 is intentionally deferred in this breadth-focused pass, so `b3_outcome` is recorded as `not_run`.
 
 ## Run
 
@@ -46,4 +47,6 @@ This regenerates:
 
 - `mini_pilot/seed_results.csv`
 - `mini_pilot/results.csv`
+- `mini_pilot/summary_by_class.csv`
+- `mini_pilot/summary_by_stratum.csv`
 - `mini_pilot/pilot_memo.md`

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  25 APR 2026 00:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.13)  25 APR 2026 07:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,12 +397,15 @@ s---re-verification,
 (./sections/01_intro.tex [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./sec
-tions/02_background.tex [2] [3])
-(./sections/03_dataset_and_refactorings.tex [4] [5] [6])
-(./sections/04_baselines_and_setup.tex [7] [8]) (./sections/05_results.tex
-[9] (./tables/table_benchmark_composition.tex) [10]
+tions/02_background.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+[3]) (./sections/03_dataset_and_refactorings.tex [4] [5] [6])
+(./sections/04_baselines_and_setup.tex [7] [8] [9]) (./sections/05_results.tex
+(./tables/table_benchmark_composition.tex) [10]
 (./tables/table_breakage_recovery.tex
-Overfull \hbox (80.4595pt too wide) in paragraph at lines 6--21
+Overfull \hbox (187.41212pt too wide) in paragraph at lines 6--21
  [][] 
  []
 
@@ -413,22 +416,23 @@ mm/m/it/10 L[]$\T1/cmr/m/n/10 , $\OML/cmm/m/it/10 L[]$\T1/cmr/m/n/10 , $\OML/cm
 m/m/it/10 L[]$\T1/cmr/m/n/10 , $\OML/cmm/m/it/10 L[]$\T1/cmr/m/n/10 ,
  []
 
-(./tables/table_failure_modes.tex)) (./sections/06_threats_to_validity.tex
-[12] [13]) (./sections/07_related_work.tex
+(./tables/table_failure_modes.tex) [12]) (./sections/06_threats_to_validity.tex
+[13]) (./sections/07_related_work.tex [14]
 Overfull \hbox (0.26385pt too wide) in paragraph at lines 4--5
 \T1/cmr/m/n/10 repository- or revision-oriented anal-y-sis rather than one-shot
  task eval-u-a-tion [25].
  []
 
-[14]) (./sections/08_conclusion.tex [15]) (./sections/appendix_artifact.tex
+[15]) (./sections/08_conclusion.tex) (./sections/appendix_artifact.tex
 Overfull \hbox (3.99052pt too wide) in paragraph at lines 5--6
  \T1/cmr/m/it/10 Ar-ti-fact con-tents.[] \T1/cmr/m/n/10 The ar-ti-fact pack-age
  in-cludes the bench-mark gen-er-a-tor []\T1/cmr/bx/n/10 [MISS-
  []
 
+[16]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 13.
-[16]) (./sections/appendix_prompt.tex) (./main.bbl [17]
+) (./sections/appendix_prompt.tex [17]) (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 31--35
 []\T1/cmr/m/n/9 Gazzola, L., Micucci, D., Mar-i-ani, L.: Au-to-matic soft-ware 
 re-
@@ -522,7 +526,7 @@ Underfull \hbox (badness 1137) in paragraph at lines 134--139
 Here is how much of TeX's memory you used:
  3715 strings out of 480608
  50103 string characters out of 5903630
- 310094 words of memory out of 5000000
+ 314094 words of memory out of 5000000
  19505 multiletter control sequences out of 15000+600000
  544617 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -539,20 +543,22 @@ r10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
 .pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><
-/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/l
-ocal/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loc
-al/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local
-/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (19 pages, 381951 bytes).
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/lo
+cal/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on main.pdf (19 pages, 400745 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 159 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

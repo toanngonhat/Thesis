@@ -1,21 +1,21 @@
 \begin{table}[t]
 \centering
 \small
-\caption{Planned breakage and recovery summary. The table is intended to show which refactoring classes are most brittle and how much of that breakage is removed by B1, B2, and B3 before the residual repair gap is measured.}
+\caption{Planned breakage and recovery summary. The table is intended to show which refactoring classes are most brittle, how much of the B1-broken subset is recovered by enabled recovery baselines, and when a deferred baseline is explicitly recorded as \texttt{not\_run} rather than conflated with failure. Low-frequency classes may be merged in the main text if early experiment tiers leave some rows too sparse for stable comparison.}
 \label{tab:breakage-recovery}
 \begin{tabular}{lcccccc}
 \toprule
-Class & Att. & Brk. & $BR(class_i)$ & $RR(B1)$ & $RR(B2)$ & $RR(B3)$ \\
+Class & Att. & Brk. & $BR(class_i)$ & $RR(B2 \mid \mathit{broken})$ & $RR(B3 \mid \mathit{broken})$ & B3 status \\
 \midrule
-Rename & \tbdcell{$N^{\mathrm{rename}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{rename}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{rename})$} & \tbdcell{$RR^{\mathrm{rename}}(B1)$} & \tbdcell{$RR^{\mathrm{rename}}(B2)$} & \tbdcell{$RR^{\mathrm{rename}}(B3)$} \\
-Helper extraction & \tbdcell{$N^{\mathrm{extract}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{extract}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{extract})$} & \tbdcell{$RR^{\mathrm{extract}}(B1)$} & \tbdcell{$RR^{\mathrm{extract}}(B2)$} & \tbdcell{$RR^{\mathrm{extract}}(B3)$} \\
-Inlining & \tbdcell{$N^{\mathrm{inline}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{inline}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{inline})$} & \tbdcell{$RR^{\mathrm{inline}}(B1)$} & \tbdcell{$RR^{\mathrm{inline}}(B2)$} & \tbdcell{$RR^{\mathrm{inline}}(B3)$} \\
-Statement reordering & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{reorder})$} & \tbdcell{$RR^{\mathrm{reorder}}(B1)$} & \tbdcell{$RR^{\mathrm{reorder}}(B2)$} & \tbdcell{$RR^{\mathrm{reorder}}(B3)$} \\
-Loop reshaping & \tbdcell{$N^{\mathrm{loop}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{loop}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{loop})$} & \tbdcell{$RR^{\mathrm{loop}}(B1)$} & \tbdcell{$RR^{\mathrm{loop}}(B2)$} & \tbdcell{$RR^{\mathrm{loop}}(B3)$} \\
-Contract factoring & \tbdcell{$N^{\mathrm{contract}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{contract}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{contract})$} & \tbdcell{$RR^{\mathrm{contract}}(B1)$} & \tbdcell{$RR^{\mathrm{contract}}(B2)$} & \tbdcell{$RR^{\mathrm{contract}}(B3)$} \\
-Ghost-code movement & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{ghost})$} & \tbdcell{$RR^{\mathrm{ghost}}(B1)$} & \tbdcell{$RR^{\mathrm{ghost}}(B2)$} & \tbdcell{$RR^{\mathrm{ghost}}(B3)$} \\
+Rename & \tbdcell{$N^{\mathrm{rename}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{rename}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{rename})$} & \tbdcell{$RR^{\mathrm{rename}}(B2 \mid \mathit{broken})$} & \tbdcell{$RR^{\mathrm{rename}}(B3 \mid \mathit{broken})$} & \tbdcell{\texttt{run / not\_run}} \\
+Helper extraction & \tbdcell{$N^{\mathrm{extract}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{extract}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{extract})$} & \tbdcell{$RR^{\mathrm{extract}}(B2 \mid \mathit{broken})$} & \tbdcell{$RR^{\mathrm{extract}}(B3 \mid \mathit{broken})$} & \tbdcell{\texttt{run / not\_run}} \\
+Inlining & \tbdcell{$N^{\mathrm{inline}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{inline}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{inline})$} & \tbdcell{$RR^{\mathrm{inline}}(B2 \mid \mathit{broken})$} & \tbdcell{$RR^{\mathrm{inline}}(B3 \mid \mathit{broken})$} & \tbdcell{\texttt{run / not\_run}} \\
+Statement reordering & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{reorder}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{reorder})$} & \tbdcell{$RR^{\mathrm{reorder}}(B2 \mid \mathit{broken})$} & \tbdcell{$RR^{\mathrm{reorder}}(B3 \mid \mathit{broken})$} & \tbdcell{\texttt{run / not\_run}} \\
+Loop reshaping & \tbdcell{$N^{\mathrm{loop}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{loop}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{loop})$} & \tbdcell{$RR^{\mathrm{loop}}(B2 \mid \mathit{broken})$} & \tbdcell{$RR^{\mathrm{loop}}(B3 \mid \mathit{broken})$} & \tbdcell{\texttt{run / not\_run}} \\
+Contract factoring & \tbdcell{$N^{\mathrm{contract}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{contract}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{contract})$} & \tbdcell{$RR^{\mathrm{contract}}(B2 \mid \mathit{broken})$} & \tbdcell{$RR^{\mathrm{contract}}(B3 \mid \mathit{broken})$} & \tbdcell{\texttt{run / not\_run}} \\
+Ghost-code movement & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{attempted}}$} & \tbdcell{$N^{\mathrm{ghost}}_{\mathit{broken}}$} & \tbdcell{$BR(\mathrm{ghost})$} & \tbdcell{$RR^{\mathrm{ghost}}(B2 \mid \mathit{broken})$} & \tbdcell{$RR^{\mathrm{ghost}}(B3 \mid \mathit{broken})$} & \tbdcell{\texttt{run / not\_run}} \\
 \midrule
-Residual gap & \tbdcell{$N_{\mathit{broken}}$} & \tbdcell{$N_{\mathit{unrecovered}}$} & \tbdcell{$-$} & \multicolumn{3}{c}{\tbdcell{$Gap_{\mathit{residual}}$}} \\
+Residual gap & \tbdcell{$N_{\mathit{broken}}$} & \tbdcell{$N_{\mathit{unrecovered}}(\mathcal{B}_{\mathit{enabled}})$} & \tbdcell{$-$} & \multicolumn{3}{c}{\tbdcell{$Gap_{\mathit{residual}}(\mathcal{B}_{\mathit{enabled}})$}} \\
 \bottomrule
 \end{tabular}
 \end{table}
